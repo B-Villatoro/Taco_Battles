@@ -1,15 +1,17 @@
 var db = require("../models");
 
+let Taco = require("../models/tacoModel.js")
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Taco.findAll({}).then(function(dbTacos) {
+    // db.Taco.findAll({}).then(function(dbTacos) {
       res.render("index", {
-        msg: "",
-        Tacos: dbTacos
+        // msg: "",
+        // Tacos: dbTacos
 
       });
-    });
+    // });
   });
 
   // Load Taco page and pass in an Taco by id

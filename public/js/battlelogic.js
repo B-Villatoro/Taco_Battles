@@ -66,7 +66,6 @@ function attack(userTaco, enemyTaco){
     }
 }
 
-
 // user promp options 
 //user clicks attack
 attack(TacoEx,TacoEn)

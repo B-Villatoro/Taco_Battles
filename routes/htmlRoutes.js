@@ -5,8 +5,9 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Taco.findAll({}).then(function(dbTacos) {
       res.render("index", {
-        msg: "Welcome!",
+        msg: "",
         Tacos: dbTacos
+
       });
     });
   });

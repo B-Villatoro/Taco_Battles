@@ -1,3 +1,48 @@
 <h1></h1>
 {{>navbar/navbar-block}}
-<h1>Battle Ground Page</h1>
+
+
+<!-- BATTLE GROUND HEADER -->
+<br>
+<div class="jumbotron jumbotron-fluid" style="background-color: gray">
+  <div class="container">
+    <h1>WELCOME to the TACO BATTLEGROUND</h1>
+    <p>Contents ...</p>
+    <p>
+      <a class="btn btn-primary btn-lg">Learn more</a>
+    </p>
+  </div>
+</div>
+<br><br><br>
+
+
+<!-- Main Area with the battleling tacos and stats -->
+<div id="battle_ground">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <h3 id="contender-1">Contender 1 Name</h3>
+        <ul id="contender-list-1" class= "list-group">
+          {{#each taco}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h3 id="versus">VS</h3>
+      </div>
+      <div class="col-sm-5">
+        <h3 id="contender-2">Contender 2 Name</h3>
+        <ul id="contender-list-2" class= "list-group">
+          {{#each taco}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+          </li>
+          {{/each}}
+        </ul>        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "taco_battle_db",
+    "password": null,
+    "database": null,
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "bruno",
-    "database": "tacofight",
+    "password": null,
+    "database": null,
     "host": "localhost",
     "dialect": "mysql",
     "logging": false

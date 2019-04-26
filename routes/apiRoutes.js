@@ -7,6 +7,12 @@ module.exports = function(app) {
       res.json(dbTacos);
     });
   });
+  //Get taco by id
+  app.get("/api/tacos/:id", function(req, res) {
+    db.taco.findOne({ where: { id: req.params.id } }).then(function(dbTaco) {
+      res.json(dbTaco);
+    });
+  });
 
   // Create a new Taco
   app.post("/api/tacos", function(req, res) {

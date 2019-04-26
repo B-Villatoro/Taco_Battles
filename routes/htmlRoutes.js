@@ -11,6 +11,15 @@ module.exports = function(app) {
     // });
   });
 
+  app.get("/profile", function(req, res) {
+    // db.taco.findAll({}).then(function(dbTacos) {
+      res.render("profile", {
+        // msg: "Hello",
+        // Tacos: dbTacos
+      });
+    // });
+  });
+
   // Load Taco page and pass in an Taco by id
   app.get("/taco/:id", function(req, res) {
     db.taco.findOne({ where: { id: req.params.id } }).then(function(dbTaco) {

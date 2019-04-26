@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  let Taco = sequelize.define("taco", {
+  let taco = sequelize.define("taco", {
     taco_name: DataTypes.STRING,
     name_user: DataTypes.STRING,
     attack: DataTypes.INTEGER,
@@ -7,5 +7,14 @@ module.exports = function(sequelize, DataTypes) {
     wins: DataTypes.INTEGER,
     losses: DataTypes.INTEGER
   });
-  return Taco;
+
+
+  taco.associate = function(models) {
+    taco.belongsTo(models.user, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  return taco;
 };

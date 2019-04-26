@@ -1,22 +1,19 @@
-var db = require("../models");
-
-let Taco = require("../models/tacoModel.js")
+let db = require("../models");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    // db.Taco.findAll({}).then(function(dbTacos) {
+    // db.taco.findAll({}).then(function(dbTacos) {
       res.render("index", {
-        // msg: "",
+        // msg: "Hello",
         // Tacos: dbTacos
-
       });
     // });
   });
 
   // Load Taco page and pass in an Taco by id
-  app.get("/Taco/:id", function(req, res) {
-    db.Taco.findOne({ where: { id: req.params.id } }).then(function(dbTaco) {
+  app.get("/taco/:id", function(req, res) {
+    db.taco.findOne({ where: { id: req.params.id } }).then(function(dbTaco) {
       res.render("Taco", {
         Taco: dbTaco
       });

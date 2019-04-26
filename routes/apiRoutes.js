@@ -10,22 +10,28 @@ module.exports = function(app) {
 
   // Create a new Taco
   app.post("/api/tacos", function(req, res) {
-    db.Taco.create(req.body).then(function(dbTaco) {
+    db.taco.create(req.body).then(function(dbTaco) {
       res.json(dbTaco);
     });
   });
 
   // Delete an Taco by id
   app.delete("/api/tacos/:id", function(req, res) {
-    db.Taco.destroy({ where: { id: req.params.id } }).then(function(dbTaco) {
+    db.taco.destroy({ where: { id: req.params.id } }).then(function(dbTaco) {
       res.json(dbTaco);
     });
   });
   
   //get all ingredients
   app.get("/api/ingredients", function(req, res) {
-    db.taco.findAll({}).then(function(dbIngredients) {
+    db.ingredient.findAll({}).then(function(dbIngredients) {
       res.json(dbIngredients);
+    });
+  });
+
+  app.get("/api/users", function(req, res) {
+    db.user.findAll({}).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 };

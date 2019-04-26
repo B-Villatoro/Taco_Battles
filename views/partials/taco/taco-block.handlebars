@@ -1,5 +1,8 @@
-<div>
+<div data-id="{{this.id}}" data-attack="{{this.attack}}" data-health="{{this.health}}">
     <h1>{{taco_name}}</h1>
     <h1>{{health}}</h1>
     <img src="https://via.placeholder.com/200">
+    <li    class="list-group-item">
+        <a href="api/tacos/{{this.id}}">Creator {{this.name_user}}</a>
+    </li>
 </div>

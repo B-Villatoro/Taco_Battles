@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "bruno",
-    "database": "tacofight",
+    "password": "",
+    "database": "taco_battle_db",
     "host": "localhost",
     "dialect": "mysql"
   },

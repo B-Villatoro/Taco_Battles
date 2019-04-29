@@ -23,6 +23,18 @@
             <div class="col-sm-5">
                 <h3 id="contender-1">Contender 1 Name</h3>
                 <ul id="contender-list-1" class="list-group">
+
+                    <select>
+                        {{#each users}}
+                        {{>user/select-user}}
+                        {{/each}}
+                    </select>
+                    <select>
+                        {{#each theseTacos}}
+                        {{>taco/select-taco}}
+                        {{/each}}
+                    </select>
+
                     {{#with myTaco}}
                     {{>taco/taco-block}}
                     {{/with}}
@@ -34,6 +46,19 @@
             <div class="col-sm-5">
                 <h3 id="contender-2">Contender 2 Name</h3>
                 <ul id="contender-list-2" class="list-group">
+
+                    <select id="user">
+                        {{#each users}}
+                        {{>user/select-user}}
+                        {{/each}}
+                    </select>
+
+                    <select id="taco">
+                        {{#each theseTacos}}
+                        {{>taco/select-taco}}
+                        {{/each}}
+                    </select>
+
                     {{#with enemy}}
                     {{>taco/taco-block}}
                     {{/with}}

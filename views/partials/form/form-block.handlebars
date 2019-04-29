@@ -1,4 +1,4 @@
-<form>
+<form class="create-form">
     <div class="form-group">
         <label for="name">Taco name</label>
         <input type="text" name="name" id="name">
@@ -6,16 +6,21 @@
 
     <div class="form_group">
         <label for="ing-1">Ingredient One</label>
-        <select name="ing-1" id="ing-1"></select>
+        <select class="form-control" name="ing-1" id="ing-1"></select>
     </div>
 
     <div class="form_group">
-        <label for="ing-2">Ingredient One</label>
-        <select name="ing-2" id="ing-2"></select>
+        <label for="ing-2">Ingredient Two:</label>
+        <select class="form-control" name="ing-2" id="ing-2"></select>
     </div>
 
     <div class="form_group">
-        <label for="ing-3">Ingredient One</label>
-        <select name="ing-3" id="ing-3"></select>
+        <label for="ing-3">Ingredient Three</label>
+        <select class="form-control" name="ing-3" id="ing-3"></select>
     </div>
+    <div class="form-group">
+        <label for="user">Select User id:</label>
+        <select class="form-control-users" name="user" id="user"></select>
+    </div>
+    <button id="submit-taco" class="btn btn-success btn-block mt-5">Submit Taco Information</button>
 </form>

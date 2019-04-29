@@ -22,14 +22,23 @@ module.exports = function (app) {
 
   app.get("/battle", function (req, res) {
     db.taco.findAll({}).then(function (dbTacos) {
-      let obj = {
-        myTaco: dbTacos[0],
-        enemy: dbTacos[1]
-      }
-      console.log(dbTacos);
-      res.render("battleground", obj);
-    });
-  });
+      db.user.findAll({}).then(function (dbUsers) {
+        console.log(dbUsers);
+        let obj = {
+          users: dbUsers,
+          allTaco: dbTacos,
+          myTaco: dbTacos[0],
+          enemy: dbTacos[1]
+        }
+        res.render("battleground", obj);
+      });//end db user
+
+    });//end db taco
+
+
+
+
+  });//end app.get
 
   app.get("/taco", function (req, res) {
     // db.taco.findAll({}).then(function(dbTacos) {

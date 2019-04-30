@@ -24,7 +24,7 @@
                 <h3 id="contender-1">Contender 1 Name</h3>
                 <ul id="contender-list-1" class="list-group">
 
-                    <select id="player-1">
+                    <select class="fighters" id="player-1" player="1">
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
@@ -45,16 +45,14 @@
                 <h3 id="contender-2">Contender 2 Name</h3>
                 <ul id="contender-list-2" class="list-group">
 
-                    <select id="player-2">
+                    <select class="fighters" id="player-2" player="2">
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
                     </select>
 
-                    <select id="taco">
-                        {{#each theseTacos}}
-                        {{>taco/select-taco}}
-                        {{/each}}
+                    <select id="tacos-2">
+
                     </select>
 
                     {{#with enemy}}

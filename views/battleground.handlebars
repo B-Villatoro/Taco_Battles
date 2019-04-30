@@ -24,46 +24,64 @@
                 <h3 id="contender-1">Contender 1 Name</h3>
                 <ul id="contender-list-1" class="list-group">
 
-                    <select>
+                    <select class="userSelect">
+                        <option disabled>--select user--</option>
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
                     </select>
                     <select>
+                        <option disabled>--select taco--</option>
                         {{#each theseTacos}}
                         {{>taco/select-taco}}
                         {{/each}}
                     </select>
 
+                    <div class="myTaco"
                     {{#with myTaco}}
                     {{>taco/taco-block}}
                     {{/with}}
+                    </div>
+
+
                 </ul>
             </div>
             <div class="col-sm-2">
                 <h3 id="versus">VS</h3>
+                <button class="attackTaco">Attack</button>
+
             </div>
             <div class="col-sm-5">
                 <h3 id="contender-2">Contender 2 Name</h3>
                 <ul id="contender-list-2" class="list-group">
 
-                    <select id="user">
+                    <select class="userSelect">
+                        <option disabled>--select user--</option>
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
                     </select>
 
                     <select id="taco">
+                        <option disabled>--select user--</option>
                         {{#each theseTacos}}
                         {{>taco/select-taco}}
                         {{/each}}
                     </select>
+                    <div class="enemyTaco"
+
 
                     {{#with enemy}}
                     {{>taco/taco-block}}
                     {{/with}}
+                    </div>
+
                 </ul>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<script src="/js/battleSelect.js"></script>

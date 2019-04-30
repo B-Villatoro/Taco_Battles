@@ -6,7 +6,7 @@ $(document).ready(function() {
     // find tacos associated with the user selected
 
     $(`select.fighters`).on('change', getUserId);
-
+  
     function getUserId() {
         switch (this.id) {
             case 'player-1':
@@ -28,6 +28,7 @@ $(document).ready(function() {
         let player = arguments[0];
 
         let playerId = $(`select#player-${player}`)
+
             .find('option:selected')
             .attr('data-id');
 

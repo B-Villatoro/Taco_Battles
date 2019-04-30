@@ -5,6 +5,7 @@
 #tacotxt{
   font-size: 220px;
   position:  center;
+  font-family: "Brush Script MT", cursive; 
 }
 
 body{
@@ -54,4 +55,26 @@ gap: 10px;
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+#tacotxt{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+@-webkit-keyframes mymove {
+  from {top: 0px;}
+  to {top: 100px;}
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 100px;}
+}
+
+#newUserBtn{
+float: left;
+z-index:1;
+margin-top: 0px;
 }

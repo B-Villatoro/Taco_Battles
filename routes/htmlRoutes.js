@@ -24,10 +24,9 @@ module.exports = function (app) {
     app.get('/battle', function(req, res) {
         db.taco.findAll({}).then(function(dbTacos) {
             db.user.findAll({}).then(function(dbUsers) {
-                console.log(dbUsers);
                 let obj = {
                     users: dbUsers,
-                    allTaco: dbTacos
+                    // allTaco: dbTacos
                 };
                 res.render('battleground', obj);
             }); //end db user

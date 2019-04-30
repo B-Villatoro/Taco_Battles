@@ -1,4 +1,5 @@
 
+
 //attack function
 function attack(taco1, taco2) {
     taco1.health -= taco2.attack;
@@ -47,3 +48,4 @@ $(document).ready(function() {
 
 // attack function pseudocode:
 // when attack is triggered, attack value of usertaco and subtracted from health value of enemytaco and vice versa. New heatlh values are updated in the database. Whichever taco health falls below 0 loses.
+

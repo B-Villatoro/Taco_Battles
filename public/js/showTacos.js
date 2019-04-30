@@ -5,33 +5,21 @@ $(document).ready(function() {
     // for now:
     // find tacos associated with the user selected
 
-    $(`select.fighters`).on('change', getUserId);
+    // let dataid = document.querySelectorAll('select#user');
+    // console.log(dataid);
 
-    function getUserId() {
-        switch (this.id) {
-            case 'player-1':
-                let player1 = '1';
-                $(`#tacos-${player1}`).empty();
-                renderTacoList(player1);
-                break;
-            case 'player-2':
-                let player2 = '2';
-                $(`#tacos-${player2}`).empty();
-                renderTacoList(player2);
-                break;
-            default:
-                return;
-        }
-    }
+    $('select#player-1').on('change', renderTacoList1);
+    
 
-    function renderTacoList() {
-        let player = arguments[0];
-
-        let playerId = $(`select#player-${player}`)
+    function renderTacoList1() {
+        console.log("change");
+        $('#tacos-1').empty();
+        let player1Id = $('select#player-1')
             .find('option:selected')
             .attr('data-id');
+        console.log(player1Id);
 
-        $.get(`api/users/${playerId}`, function(data) {
+        $.get(`api/users/${player1Id}`, function(data) {
             if (data) {
                 const tacosData = data[0].tacos;
 
@@ -41,7 +29,7 @@ $(document).ready(function() {
                     listOption.attr('data-attack', tacosData[i].attack);
                     listOption.attr('data-health', tacosData[i].health);
                     listOption.html(tacosData[i].taco_name);
-                    $(`#tacos-${player}`).append(listOption);
+                    $('#tacos-1').append(listOption);
                     i++;
                 } while (i < data[0].tacos.length);
             }

@@ -25,11 +25,13 @@
                 <ul id="contender-list-1" class="list-group">
 
                     <select class="fighters" id="player-1" player="1">
+
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
                     </select>
                     <select id="tacos-1">
+
 
 
                     </select>
@@ -56,9 +58,8 @@
                             <div class="enemyTaco" {{#with enemy}} {{>taco/taco-block}} {{/with}} </div> </ul> </div>
                                 <div id="battle" class="btn btn-block btn-success">Battle</div>
                     </div>
-            </div>
-        </div>
 
 
 
         <script src="/js/battleSelect.js"></script>
+

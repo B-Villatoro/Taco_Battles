@@ -24,17 +24,13 @@
                 <h3 id="contender-1">Contender 1 Name</h3>
                 <ul id="contender-list-1" class="list-group">
 
-                    <select class="userSelect">
-                        <option disabled>--select user--</option>
-                        {{#each users}}
-                        {{>user/select-user}}
-                        {{/each}}
-                    </select>
-                    <select>
-                        <option disabled>--select taco--</option>
-                        {{#each theseTacos}}
-                        {{>taco/select-taco}}
-                        {{/each}}
+
+                    <select id="player-1">
+
+
+                    <select id="tacos-1">
+
+
                     </select>
 
                     <div class="myTaco"
@@ -55,8 +51,8 @@
                 <h3 id="contender-2">Contender 2 Name</h3>
                 <ul id="contender-list-2" class="list-group">
 
-                    <select class="userSelect">
-                        <option disabled>--select user--</option>
+
+                    <select id="player-2">
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
@@ -78,6 +74,7 @@
 
                 </ul>
             </div>
+            <div id="battle" class="btn btn-block btn-success">Battle</div>
         </div>
     </div>
 </div>

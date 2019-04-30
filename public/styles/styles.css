@@ -2,11 +2,6 @@
   line-height: 2.5;
 }
 
-#tacotxt{
-  font-size: 220px;
-  position:  center;
-  font-family: "Brush Script MT", cursive; 
-}
 
 body{
   background: url(https://media.giphy.com/media/l2JHRuT9RPkKm3oQ0/giphy.gif); 
@@ -58,10 +53,17 @@ gap: 10px;
 }
 
 #tacotxt{
-  width: 100px;
+  font-size: 180px;
+  position:  center;
+  font: 800 25vmin/30vh cookie, cursive;
+  background: url(https://media.giphy.com/media/l2JHRuT9RPkKm3oQ0/giphy.gif) 50% cover; 
+}
+
+#tacotxt{
+  width: 90px;
   height: 100px;
   position: relative;
-  animation: mymove 5s infinite;
+  animation: mymove 4s infinite;
 }
 @-webkit-keyframes mymove {
   from {top: 0px;}

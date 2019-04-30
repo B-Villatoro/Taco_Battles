@@ -1,6 +1,10 @@
 <h1></h1>
 {{>navbar/navbar-block}}
-<br><br><br>
+<br><br>
+<button type="button" class="btn btn-primary" id="newUserBtn" data-toggle="modal" data-target="#exampleModalCenter">
+  New Users
+</button>
+<br>
 <h3 id="tacotxt">TACO BATTLES</h3>
 <ul id="example-list" class="list-group">
   {{#each examples}}
@@ -12,9 +16,6 @@
 </ul>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  New Users
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -1,8 +1,8 @@
 let db = require('../models');
 
-module.exports = function(app) {
+module.exports = function (app) {
     // Load index page
-    app.get('/', function(req, res) {
+    app.get('/', function (req, res) {
         // db.taco.findAll({}).then(function(dbTacos) {
         res.render('index', {
             // msg: "Hello",
@@ -11,7 +11,7 @@ module.exports = function(app) {
         // });
     });
 
-    app.get('/profile', function(req, res) {
+    app.get('/profile', function (req, res) {
         // db.taco.findAll({}).then(function(dbTacos) {
         res.render('profile', {
             // msg: "Hello",
@@ -19,6 +19,8 @@ module.exports = function(app) {
         });
         // });
     });
+
+    
     app.get('/battle', function(req, res) {
         db.taco.findAll({}).then(function(dbTacos) {
             db.user.findAll({}).then(function(dbUsers) {
@@ -31,7 +33,7 @@ module.exports = function(app) {
         }); //end db taco
     }); //end app.get
 
-    app.get('/taco', function(req, res) {
+    app.get('/taco', function (req, res) {
         // db.taco.findAll({}).then(function(dbTacos) {
         res.render('createtaco', {
             // msg: "Hello",
@@ -41,10 +43,10 @@ module.exports = function(app) {
     });
 
     // Load Taco page and pass in an Taco by id
-    app.get('/taco/:id', function(req, res) {
+    app.get('/taco/:id', function (req, res) {
         db.taco
             .findOne({ where: { id: req.params.id } })
-            .then(function(dbTaco) {
+            .then(function (dbTaco) {
                 res.render('Taco', {
                     Taco: dbTaco
                 });
@@ -52,7 +54,7 @@ module.exports = function(app) {
     });
 
     // Render 404 page for any unmatched routes
-    app.get('*', function(req, res) {
+    app.get('*', function (req, res) {
         res.render('404');
     });
 };

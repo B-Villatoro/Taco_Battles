@@ -7,7 +7,6 @@ $(document).ready(function() {
 
     $(`select.fighters`).on('change', getUserId);
 
-<<<<<<< HEAD
     function getUserId() {
         switch (this.id) {
             case 'player-1':
@@ -29,15 +28,6 @@ $(document).ready(function() {
         let player = arguments[0];
 
         let playerId = $(`select#player-${player}`)
-=======
-    $('select#player-1').on('change', renderTacoList1);
-    
-
-    function renderTacoList1() {
-        console.log("change");
-        $('#tacos-1').empty();
-        let player1Id = $('select#player-1')
->>>>>>> master
             .find('option:selected')
             .attr('data-id');
 

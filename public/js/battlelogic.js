@@ -35,7 +35,7 @@
 //     wins: 0,
 //     losses: 0,
 //     UserId: 0001,
-// }   
+// }
 
 // //other taco
 // let TacoEn = {
@@ -46,47 +46,76 @@
 //     wins: 0,
 //     losses: 0,
 //     UserId: 0001,
-// }   
-
+// }
 
 //attack function
-function attack(userTaco, enemyTaco) {
-    enemyTaco.health = enemyTaco.health - userTaco.attack;
-    if (enemyTaco.health <= 0) {
-        // userTaco.wins++;
-        // enemyTaco.losses++;
-        $("#versus").text(`${userTaco.name} wins`);
-    }
-    else if (userTaco.health <= 0) {
-        // userTaco.losses++;
-        // enemyTaco.wins++;
-        $("#versus").text(`${enemyTaco.name} wins`);
-    }
+function attack(taco1, taco2) {
+    taco1.health -= taco2.attack;
+    taco2.health -= taco1.attack;
+
+    // console.log(userTaco);
+    // console.log(enemyTaco);
+
+    // while (enemyTaco.health > 0 && userTaco.health > 0) {
+    //     attack(userTaco, enemyTaco);
+    // }
+    // if (enemyTaco.health <= 0) {
+    //     // userTaco.wins++;
+    //     // enemyTaco.losses++;
+    //     console.log('user taco wins');
+    //     $('#versus').text(`${userTaco.name} wins`);
+    // } else if (userTaco.health <= 0) {
+    //     // userTaco.losses++;
+    //     // enemyTaco.wins++;
+    //     $('#versus').text(`${enemyTaco.name} wins`);
+    // }
 }
-$(document).ready(function () {
-    let myTaco = {
-        name: $(".myTaco").attr("name"),
-        attack: $(".myTaco").data("attack"),
-        health: $(".myTaco").data("health")
-    }
-    let enemyTaco = {
-        name: $(".enemyTaco").attr("name"),
-        attack: $(".enemyTaco").data("attack"),
-        health: $(".enemyTaco").data("health")
-    }
-    $(document).on("click",".attackTaco", function () {
-        if (myTaco.health > 0) {
-            attack(myTaco, enemyTaco);
-            $(`.${enemyTaco.name}-health`).text(`${enemyTaco.health}`)
-            if (enemyTaco.health > 0) {
-                attack(enemyTaco, myTaco);
-                $(`.${myTaco.name}-health`).text(`${myTaco.health}`)
-            }
+$(document).ready(function() {
+    $(document).on('click', '.attackTaco', function() {
+        let userTaco = {
+            tacoName: $('select#tacos-1')
+                .find('option:selected')
+                .html(),
+            attack: $('select#tacos-1')
+                .find('option:selected')
+                .data('attack'),
+            health: $('select#tacos-1')
+                .find('option:selected')
+                .data('health')
+        };
+
+        console.log(userTaco);
+
+        let enemyTaco = {
+            tacoName: $('select#tacos-2')
+                .find('option:selected')
+                .html(),
+            attack: $('select#tacos-2')
+                .find('option:selected')
+                .data('attack'),
+            health: $('select#tacos-2')
+                .find('option:selected')
+                .data('health')
+        };
+
+        console.log(enemyTaco);
+
+        if (userTaco.health > 0) {
+            attack(userTaco, enemyTaco);
         }
-    })
-})
-// user promp options
-// //user clicks attack
-// attack(TacoEx,TacoEn)
-// //enemy turn
-// attack(TacoEn,TacoEx)
+
+        attack(userTaco, enemyTaco);
+
+        // if (userTaco.health > 0) {
+        //     attack(userTaco, enemyTaco);
+        //     // $(`.${enemyTaco.name}-health`).text(`${enemyTaco.health}`);
+        // }
+        // if (enemyTaco.health > 0) {
+        //     attack(enemyTaco, userTaco);
+        //     // $(`.${userTaco.name}-health`).text(`${userTaco.health}`);
+        // }
+    });
+});
+
+// attack function pseudocode:
+// when attack is triggered, attack value of usertaco and subtracted from health value of enemytaco and vice versa. New heatlh values are updated in the database. Whichever taco health falls below 0 loses.

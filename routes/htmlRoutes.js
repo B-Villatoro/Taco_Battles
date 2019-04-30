@@ -19,7 +19,6 @@ module.exports = function(app) {
         });
         // });
     });
-
     app.get('/battle', function(req, res) {
         db.taco.findAll({}).then(function(dbTacos) {
             db.user.findAll({}).then(function(dbUsers) {

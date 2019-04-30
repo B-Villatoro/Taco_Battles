@@ -9,8 +9,10 @@ $(document).ready(function() {
     // console.log(dataid);
 
     $('select#player-1').on('change', renderTacoList1);
+    
 
     function renderTacoList1() {
+        console.log("change");
         $('#tacos-1').empty();
         let player1Id = $('select#player-1')
             .find('option:selected')

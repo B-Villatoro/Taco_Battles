@@ -5,7 +5,7 @@ $(document).ready(function () {
        let tacoId = (this.id)
         $(`#${tacoId}-char`).empty();
         $(`#${tacoId}-char`).append(
-            `<h3>${tacoName}<h3>
+            `<h3>${tacoName}</h3>
             <img src="https://www.tacobell.com/images/22101_crunchy_taco_supreme_269x269.jpg" height="200" width="200">`
         )
 

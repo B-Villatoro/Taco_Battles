@@ -15,7 +15,7 @@
 
 function attack(taco1, taco2) {
     let complete = false
-    for (let i = 0; complete != true; i++) {
+    for (let i = Math.floor(Math.random() * 2); complete != true; i++) {
         switch (i % 2) {
             case 0:
                 taco2.health -= taco1.attack;
@@ -66,8 +66,23 @@ $(document).ready(function () {
         };
 
         console.log(enemyTaco);
+
+
+
         if (userTaco.attack != null && enemyTaco.attack != null) {
-            attack(userTaco, enemyTaco);
+            let modalBody = $('.modal-body');
+            let iframe = $(
+                '<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/l2JIl2RIdkUg4skCs" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/tacobell-taco-tacos-bell-l2JIl2RIdkUg4skCs">via GIPHY</a></p>'
+            );
+
+            modalBody.append(iframe);
+            $('#myModal').modal('show');
+            
+            setTimeout(() => {
+                $('#myModal').modal("hide")
+                attack(userTaco, enemyTaco);
+                
+            }, 4500);
         }
 
     });

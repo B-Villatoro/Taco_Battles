@@ -66,7 +66,7 @@ $(document).ready(function () {
         };
 
         console.log(enemyTaco);
-        if (userTaco.tacoName != null && enemyTaco.tacoName != null) {
+        if (userTaco.attack != null && enemyTaco.attack != null) {
             attack(userTaco, enemyTaco);
         }
 

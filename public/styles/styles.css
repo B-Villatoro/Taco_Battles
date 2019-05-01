@@ -63,7 +63,10 @@ gap: 10px;
   width: 90px;
   height: 100px;
   position: relative;
-  animation: mymove 4s infinite;
+  animation: mymove 4s;
+  -webkit-animation-fill-mode: forwards;
+
+  ;
 }
 @-webkit-keyframes mymove {
   from {top: 0px;}

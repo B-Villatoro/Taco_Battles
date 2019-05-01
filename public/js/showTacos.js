@@ -26,6 +26,7 @@ $(document).ready(function() {
 
     function renderTacoList() {
         let player = arguments[0];
+        console.log(player);
 
         let playerId = $(`select#player-${player}`)
             .find('option:selected')
@@ -38,6 +39,8 @@ $(document).ready(function() {
                 let i = 0;
                 do {
                     let listOption = $('<option>');
+                    listOption.attr('id', tacosData[i].id);
+                    listOption.attr('value', tacosData[i].taco_name);
                     listOption.attr('data-attack', tacosData[i].attack);
                     listOption.attr('data-health', tacosData[i].health);
                     listOption.html(tacosData[i].taco_name);

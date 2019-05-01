@@ -1,10 +1,7 @@
-console.log("work");
-
 $(document).ready(function () {
 
     $(document).on('change', 'select.roster', function (event) {
        let tacoName = $(this).find("option:selected").attr("value");
-       console.log(tacoName);
        let tacoId = (this.id)
         $(`#${tacoId}-char`).empty();
         $(`#${tacoId}-char`).append(

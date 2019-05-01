@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let selectArr = Array.from($('.list-group'));
-    console.log(selectArr);
+    // console.log(selectArr);
 
     // for now:
     // find tacos associated with the user selected
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     function renderTacoList() {
         let player = arguments[0];
-        console.log(player);
+        // console.log(player);
 
         let playerId = $(`select#player-${player}`)
             .find('option:selected')
@@ -34,6 +34,8 @@ $(document).ready(function() {
 
         $.get(`api/users/${playerId}`, function(data) {
             if (data) {
+                let placeholder = `<option selected="selected" disabled hidden>Select Taco</option>`;
+                $(`#tacos-${player}`).append(placeholder);
                 const tacosData = data[0].tacos;
 
                 let i = 0;

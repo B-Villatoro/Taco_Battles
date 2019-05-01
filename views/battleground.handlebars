@@ -6,10 +6,9 @@
 <br>
 <div class="jumbotron jumbotron-fluid" style="background-color: gray">
     <div class="container">
-        <h1>WELCOME to the TACO BATTLEGROUND</h1>
-        <p>Contents ...</p>
+        <h1 class="displayHeader text-center">WELCOME to the TACO BATTLEGROUND</h1>
         <p>
-            <a class="btn btn-primary btn-lg">Learn more</a>
+            {{!-- <a class="btn btn-primary btn-lg">Learn more</a> --}}
         </p>
     </div>
 </div>
@@ -28,12 +27,14 @@
                 <ul id="contender-list-1" class="list-group">
 
                     <select class="fighters" id="player-1" player="1">
+                        <option selected="selected" disabled hidden>Select User</option>
 
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
                     </select>
                     <select id="tacos-1" class="roster">
+                        <option selected="selected" disabled hidden>Select Taco</option>
                     </select>
                     <div id="tacos-1-char"></div>
             </div>
@@ -50,13 +51,14 @@
                 <ul id="contender-list-2" class="list-group">
 
                     <select class="fighters" id="player-2" player="2">
+                        <option selected="selected" disabled hidden>Select User</option>
                         {{#each users}}
                         {{>user/select-user}}
                         {{/each}}
                     </select>
 
                     <select id="tacos-2" class="roster">
-
+                        <option selected="selected" disabled hidden>Select Taco</option>
                     </select>
 
                     <div id="tacos-2-char"></div>

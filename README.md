@@ -19,3 +19,8 @@ Everytime a User creates a Taco, that taco is added to their taco roster. Each U
 4. Let the TACO BATTLE begin!
 5. The winner gets the ultimate bragging rights of BEST TACO!
 
+## Created By
+Tim (https://github.com/motkilo)
+Mannan (https://github.com/mannanq)
+Keanu (https://github.com/kkorkor)
+Bryan (https://github.com/B-Villatoro)
